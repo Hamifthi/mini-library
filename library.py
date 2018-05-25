@@ -77,3 +77,12 @@ class Library:
             if book_name in self.users_dict[username]:
                 return True
             raise ValueError("sorry this user has returned the book")
+
+    # function for borrowing books
+    def borrow_books(self, username, book_name):
+        if self.check_user_has_the_book(username, book_name, True):
+            if self.check_user_in_library(username) and self.check_book_in_library(book_name):
+                self.users_dict[username].append(book_name)
+                self.users_borrowing_history[username].append(book_name)
+                self.books_dict[book_name] = username
+                self.books.remove(book_name)
