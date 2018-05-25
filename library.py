@@ -27,3 +27,11 @@ class Library:
             for book in books_file:
                 self.books.append(book.rstrip())
                 self.books_dict[book.rstrip()] = ''    
+    
+    # function for printing users
+    def print_users(self):
+        print([user for user in self.users])
+        
+    # function for printing books
+    def print_books(self):
+        print([book for book in self.books])
