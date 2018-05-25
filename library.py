@@ -86,3 +86,11 @@ class Library:
                 self.users_borrowing_history[username].append(book_name)
                 self.books_dict[book_name] = username
                 self.books.remove(book_name)
+
+    # function for returning books
+    def return_books(self, username, book_name):
+        if self.check_user_in_library(username):
+            if self.check_user_has_the_book(username, book_name):
+                self.users_dict[username].remove(book_name)
+                self.books_dict[book_name] = ''
+                self.books.append(book_name)
