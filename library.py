@@ -35,3 +35,14 @@ class Library:
     # function for printing books
     def print_books(self):
         print([book for book in self.books])
+
+    # function for adding users
+    def add_user(self, username):
+        self.users.append(username)
+        self.users_dict[username] = []
+        self.users_borrowing_history[username] = []
+        
+    # function for adding books
+    def add_book(self, book_name):
+        self.books.append(book_name)
+        self.books_dict[book_name] = ''
