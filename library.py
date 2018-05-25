@@ -52,3 +52,17 @@ class Library:
         for username, book_names in self.users_borrowing_history.items():
             print(username)
             print(book_names)
+
+    # function for checking if the user exist or not registered
+    def check_user_in_library(self, username):
+        if username in self.users:
+            return True
+        else:
+            raise ValueError("sorry this user doesn't register in library")
+        
+    # function for checking if the book exist or borrowed
+    def check_book_in_library(self, book_name):
+        if book_name in self.books:
+            return True
+        else:
+            raise ValueError("sorry this book doesn't exist in library books or it has been borrowed")
