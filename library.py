@@ -46,3 +46,9 @@ class Library:
     def add_book(self, book_name):
         self.books.append(book_name)
         self.books_dict[book_name] = ''
+
+    # function for printing users borrowing history
+    def print_users_borrowing_history(self):
+        for username, book_names in self.users_borrowing_history.items():
+            print(username)
+            print(book_names)
