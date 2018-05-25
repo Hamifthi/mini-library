@@ -66,3 +66,14 @@ class Library:
             return True
         else:
             raise ValueError("sorry this book doesn't exist in library books or it has been borrowed")
+
+    # function for checking that a user doesn't borrow a book twice
+    def check_user_has_the_book(self, username, book_name, borrow_mode = False):
+        if borrow_mode:
+            if book_name not in self.users_dict[username]:
+                return True
+            raise ValueError("sorry this user has the book")
+        else:
+            if book_name in self.users_dict[username]:
+                return True
+            raise ValueError("sorry this user has returned the book")
