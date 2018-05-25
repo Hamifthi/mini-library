@@ -94,3 +94,11 @@ class Library:
                 self.users_dict[username].remove(book_name)
                 self.books_dict[book_name] = ''
                 self.books.append(book_name)
+
+    # function for saving borrowing history
+    def save_borrowing_history(self, filename):
+        np.save('{}.npy'.format(filename), self.users_borrowing_history)
+        
+    # function for loading borrowing history
+    def load_borrowing_history(self, filename):
+        self.users_borrowing_history = np.load('{}.npy'.format(filename))
